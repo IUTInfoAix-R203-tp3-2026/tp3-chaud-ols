@@ -21,7 +21,7 @@ public class GestionnaireEmployes {
   public List<Employe> getMajeurs() {
     List<Employe> majeurs = new ArrayList<>();
     // TODO kata 3 : filtrer employes pour ne garder que ceux d'age >= 18.
-    employes.stream().filter(e -> e.age() >= 18).toList();
+    majeurs = employes.stream().filter(e -> e.age() >= 18).toList();
     return majeurs;
   }
 
