@@ -40,6 +40,9 @@ public class JeuDeTennis {
     if ((points1 == 40 && points2 == 40) || (points1 == 50 && points2 == 50)) score = "Égalité";
     else if ((points1 == 40 || points2 == 40) && (points1 == 50 || points2 == 50))
       score = "Avantage " + joueurActif;
+    else if ((points1 == 40 || points2 == 40) && (points1 == 60 || points2 == 60))
+      score = "Jeu pour " + joueurActif;
+    else if ((points1 == 50 || points2 == 50)) score = "Jeu pour " + joueurActif;
     else score = points1 + "-" + points2;
     return score;
   }
