@@ -42,11 +42,12 @@ public class JeuDeTennis {
       if (points2 == 40 && points1 == 50) score = "Avantage " + joueur1;
       else if (points2 == 40 && points1 == 60) score = "Jeu pour " + joueur1;
       else if (points1 == 50) score = "Jeu pour " + joueur1;
-      else continue;
+      else score = points1 + "-" + points2;
     } else if (points1 < points2 && points2 >= 40) {
       if (points1 == 40 && points2 == 50) score = "Avantage " + joueur2;
       else if (points1 == 40 && points2 == 60) score = "Jeu pour " + joueur2;
       else if (points2 == 50) score = "Jeu pour " + joueur2;
+      else score = points1 + "-" + points2;
     } else score = points1 + "-" + points2;
     return score;
   }
