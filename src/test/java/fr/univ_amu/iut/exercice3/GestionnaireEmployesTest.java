@@ -33,14 +33,12 @@ class GestionnaireEmployesTest {
     assertThat(g.getMajeurs()).extracting(Employe::nom).containsExactly("Alice", "Charlie");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_personne_de_18_ans_est_majeure() {
     GestionnaireEmployes g = new GestionnaireEmployes(List.of(new Employe("Dana", 18)));
     assertThat(g.getMajeurs()).hasSize(1);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_gestionnaire_calcule_l_age_moyen_des_majeurs() {
     GestionnaireEmployes g =
@@ -74,6 +72,7 @@ class GestionnaireEmployesTest {
     GestionnaireEmployes g =
         new GestionnaireEmployes(
             List.of(new Employe("Charlie", 40), new Employe("Alice", 25), new Employe("Bob", 30)));
+
     assertThat(g.parAgeCroissant()).extracting(Employe::age).containsExactly(25, 30, 40);
   }
 }
