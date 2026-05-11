@@ -3,7 +3,6 @@ package fr.univ_amu.iut.exercice2;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -163,7 +162,6 @@ class JeuDeTennisTest {
 
   // ========= Win =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_avantage_alice_et_un_point_d_alice_alice_a_gagne() {
     for (int i = 0; i < 3; i++) {
@@ -175,21 +173,18 @@ class JeuDeTennisTest {
     assertThat(jeu.getScore()).isEqualTo("Jeu pour Alice");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_quatre_points_d_alice_alice_a_gagne() {
     for (int i = 0; i < 4; i++) jeu.marquerPoint("Alice");
     assertThat(jeu.getScore()).isEqualTo("Jeu pour Alice");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_quatre_points_de_bob_bob_a_gagne() {
     for (int i = 0; i < 4; i++) jeu.marquerPoint("Bob");
     assertThat(jeu.getScore()).isEqualTo("Jeu pour Bob");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_quatre_points_d_alice_et_un_point_de_bob_alice_a_gagne() {
     for (int i = 0; i < 4; i++) {
@@ -199,7 +194,6 @@ class JeuDeTennisTest {
     assertThat(jeu.getScore()).isEqualTo("Jeu pour Alice");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_quatre_points_d_alice_et_deux_points_de_bob_alice_a_gagne() {
     for (int i = 0; i < 4; i++) jeu.marquerPoint("Alice");
