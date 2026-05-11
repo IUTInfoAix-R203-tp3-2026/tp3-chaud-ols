@@ -19,14 +19,12 @@ import org.junit.jupiter.api.Test;
  */
 class GestionnaireEmployesTest {
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_liste_vide_n_a_aucun_majeur() {
     GestionnaireEmployes g = new GestionnaireEmployes(List.of());
     assertThat(g.getMajeurs()).isEmpty();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_gestionnaire_filtre_les_majeurs() {
     GestionnaireEmployes g =
