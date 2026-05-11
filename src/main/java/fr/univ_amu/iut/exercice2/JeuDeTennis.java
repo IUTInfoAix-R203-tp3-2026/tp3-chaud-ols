@@ -9,8 +9,10 @@ public class JeuDeTennis {
 
   private final String joueur1;
   private final String joueur2;
+  private String joueurActif;
   private int points1;
   private int points2;
+  private String score = "0-0";
 
   public JeuDeTennis(String joueur1, String joueur2) {
     this.joueur1 = joueur1;
@@ -20,6 +22,7 @@ public class JeuDeTennis {
   /// Enregistre un point pour le joueur dont le nom est passé en argument.
   public void marquerPoint(String joueur) {
     // TODO kata 2 : incrémenter le compteur du joueur qui vient de marquer.
+    joueurActif = joueur;
     if (joueur == joueur1)
       if (points1 < 30) points1 += 15;
       else points1 += 10;
@@ -34,9 +37,10 @@ public class JeuDeTennis {
     // - égalité >=3 : "Égalité"
     // - après Égalité, un joueur mène d'un point : "Avantage <nom>"
     // - un joueur a 4 points et 2 d'avance : "Jeu pour <nom>"
-    String score = "0-0";
-    score = points1 + "-" + points2;
-    if (points1 == 40 && points2 == 40) return "Égalité";
+    if ((points1 == 40 && points2 == 40) || (points1 == 50 && points2 == 50)) score = "Égalité";
+    else if ((points1 == 40 || points2 == 40) && (points1 == 50 || points2 == 50))
+      score = "Avantage " + joueurActif;
+    else score = points1 + "-" + points2;
     return score;
   }
 }
