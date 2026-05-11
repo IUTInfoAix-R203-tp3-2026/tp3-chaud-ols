@@ -38,12 +38,16 @@ public class JeuDeTennis {
     // - après Égalité, un joueur mène d'un point : "Avantage <nom>"
     // - un joueur a 4 points et 2 d'avance : "Jeu pour <nom>"
     if ((points1 == 40 && points2 == 40) || (points1 == 50 && points2 == 50)) score = "Égalité";
-    else if ((points1 == 40 || points2 == 40) && (points1 == 50 || points2 == 50))
-      score = "Avantage " + joueurActif;
-    else if ((points1 == 40 || points2 == 40) && (points1 == 60 || points2 == 60))
-      score = "Jeu pour " + joueurActif;
-    else if ((points1 == 50 || points2 == 50)) score = "Jeu pour " + joueurActif;
-    else score = points1 + "-" + points2;
+    else if (points1 > points2 && points1 >= 40) {
+      if (points2 == 40 && points1 == 50) score = "Avantage " + joueur1;
+      else if (points2 == 40 && points1 == 60) score = "Jeu pour " + joueur1;
+      else if (points1 == 50) score = "Jeu pour " + joueur1;
+      else continue;
+    } else if (points1 < points2 && points2 >= 40) {
+      if (points1 == 40 && points2 == 50) score = "Avantage " + joueur2;
+      else if (points1 == 40 && points2 == 60) score = "Jeu pour " + joueur2;
+      else if (points2 == 50) score = "Jeu pour " + joueur2;
+    } else score = points1 + "-" + points2;
     return score;
   }
 }
