@@ -140,7 +140,6 @@ class JeuDeTennisTest {
     assertThat(jeu.getScore()).isEqualTo("Avantage Alice");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_egalite_et_un_point_de_bob_le_score_est_avantage_bob() {
     for (int i = 0; i < 3; i++) {
@@ -151,7 +150,6 @@ class JeuDeTennisTest {
     assertThat(jeu.getScore()).isEqualTo("Avantage Bob");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void apres_avantage_alice_et_un_point_de_bob_le_score_revient_a_egalite() {
     for (int i = 0; i < 3; i++) {
