@@ -3,7 +3,6 @@ package fr.univ_amu.iut.exercice3;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -47,7 +46,6 @@ class GestionnaireEmployesTest {
     assertThat(g.ageMoyenDesMajeurs()).isEqualTo(30.0);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void l_age_moyen_sans_majeur_vaut_0() {
     GestionnaireEmployes g =
@@ -55,7 +53,6 @@ class GestionnaireEmployesTest {
     assertThat(g.ageMoyenDesMajeurs()).isEqualTo(0.0);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_gestionnaire_trie_alphabetiquement() {
     GestionnaireEmployes g =
@@ -66,7 +63,6 @@ class GestionnaireEmployesTest {
         .containsExactly("Alice", "Bob", "Charlie");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_gestionnaire_trie_par_age_croissant() {
     GestionnaireEmployes g =

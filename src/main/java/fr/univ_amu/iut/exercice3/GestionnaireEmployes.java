@@ -1,6 +1,7 @@
 package fr.univ_amu.iut.exercice3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /// Kata 3 - Gestionnaire d'employés.
@@ -31,6 +32,7 @@ public class GestionnaireEmployes {
     double moyenne = 0.0;
     // TODO kata 3 : additionner les âges des majeurs puis diviser par leur nombre.
     // Attention au cas "aucun majeur" → 0.0 (pas NaN).
+    moyenne = getMajeurs().stream().mapToInt(Employe::age).average().orElse(0.0);
     return moyenne;
   }
 
@@ -39,6 +41,7 @@ public class GestionnaireEmployes {
   public List<Employe> parOrdreAlphabetique() {
     List<Employe> tries = new ArrayList<>(employes);
     // TODO kata 3 : trier tries avec un Comparator sur le nom.
+    tries = employes.stream().sorted(Comparator.comparing(Employe::nom)).toList();
     return tries;
   }
 
@@ -47,6 +50,7 @@ public class GestionnaireEmployes {
   public List<Employe> parAgeCroissant() {
     List<Employe> tries = new ArrayList<>(employes);
     // TODO kata 3 : trier tries avec un Comparator sur l'âge.
+    tries = employes.stream().sorted(Comparator.comparing(Employe::age)).toList();
     return tries;
   }
 }
