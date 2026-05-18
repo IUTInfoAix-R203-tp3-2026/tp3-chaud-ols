@@ -152,6 +152,38 @@ public class Yahtzee {
   public static int full(int d1, int d2, int d3, int d4, int d5) {
     int score = 0;
     // TODO kata 5 : un brelan (une face 3 fois) + une paire (autre face 2 fois).
+    int[] des = {d1, d2, d3, d4, d5};
+    int tmp = 0;
+    int tmpScore = 0;
+    int valbrelan = 0;
+    for (int i = 1; i <= 6; i++) {
+      int compteur = 0;
+      for (int d : des) {
+        if (d == i) {
+          compteur++;
+          tmp = d;
+        }
+      }
+      if (compteur >= 3) {
+        score = score + 3 * tmp;
+        valbrelan = tmp;
+      }
+    }
+    if (score == 0) return score;
+    else tmpScore = score;
+    tmp = 0;
+    for (int i = 1; i <= 6; i++) {
+      int compteur = 0;
+      for (int d : des) {
+        if (d == i) {
+          compteur++;
+          tmp = d;
+        }
+      }
+      if (compteur >= 2 && tmp != valbrelan) score = score + 2 * tmp;
+    }
+    if (score == tmpScore) score = 0;
+
     return score;
   }
 }
