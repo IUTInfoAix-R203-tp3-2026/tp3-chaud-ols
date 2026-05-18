@@ -29,7 +29,6 @@ class PaginationTest {
     assertThat(new Pagination(1, 1).afficher()).isEqualTo("(1)");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_pagination_de_5_pages_avec_courant_au_milieu_affiche_toutes_les_pages() {
     assertThat(new Pagination(3, 5).afficher()).isEqualTo("1 2 (3) 4 5");
