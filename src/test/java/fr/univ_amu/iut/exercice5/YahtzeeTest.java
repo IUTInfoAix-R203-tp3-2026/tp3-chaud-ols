@@ -111,7 +111,6 @@ class YahtzeeTest {
     assertThat(Yahtzee.deuxPaires(1, 1, 2, 3, 4)).isZero();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void les_deux_paires_refusent_un_brelan_seul() {
     assertThat(Yahtzee.deuxPaires(3, 3, 3, 1, 2)).isZero();
@@ -119,20 +118,17 @@ class YahtzeeTest {
 
   // ========= brelan =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_brelan_avec_trois_des_donne_la_somme() {
     assertThat(Yahtzee.brelan(3, 3, 3, 4, 5)).isEqualTo(9);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_brelan_avec_cinq_des_identiques_prend_trois() {
     // 5 dés identiques : la catégorie "brelan" ne compte que 3 de la valeur
     assertThat(Yahtzee.brelan(5, 5, 5, 5, 5)).isEqualTo(15);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_brelan_sans_aucun_brelan_vaut_0() {
     assertThat(Yahtzee.brelan(1, 1, 2, 2, 5)).isZero();
@@ -140,7 +136,6 @@ class YahtzeeTest {
 
   // ========= petiteSuite =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_petite_suite_1_a_5_vaut_15() {
     assertThat(Yahtzee.petiteSuite(1, 2, 3, 4, 5)).isEqualTo(15);
