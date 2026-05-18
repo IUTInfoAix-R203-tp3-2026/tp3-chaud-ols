@@ -8,18 +8,24 @@ import org.junit.jupiter.api.Test;
 /**
  * Kata 4 - Pagination.
  *
- * <p>Affichage compact d'une barre de pagination. Le kata classique impose 7 "slots" lisibles : on
- * montre les pages au plus proches de la page courante et on remplit les "trous" par {@code ...}.
+ * <p>
+ * Affichage compact d'une barre de pagination. Le kata classique impose 7
+ * "slots" lisibles : on
+ * montre les pages au plus proches de la page courante et on remplit les
+ * "trous" par {@code ...}.
  *
- * <p>Règles :
+ * <p>
+ * Règles :
  *
  * <ul>
- *   <li>La page courante est affichée entre parenthèses
- *   <li>Les pages sont séparées par un espace
- *   <li>Si le nombre total de pages est <b>&lt;= 7</b>, on les affiche toutes
- *   <li>Sinon, on affiche : page {@code 1}, page {@code courant-1}, page {@code courant}, page
- *       {@code courant+1}, page {@code total}. Entre deux numéros consécutifs dans cette liste, si
- *       l'écart est &gt; 1 on insère {@code "..."}.
+ * <li>La page courante est affichée entre parenthèses
+ * <li>Les pages sont séparées par un espace
+ * <li>Si le nombre total de pages est <b>&lt;= 7</b>, on les affiche toutes
+ * <li>Sinon, on affiche : page {@code 1}, page {@code courant-1}, page
+ * {@code courant}, page
+ * {@code courant+1}, page {@code total}. Entre deux numéros consécutifs dans
+ * cette liste, si
+ * l'écart est &gt; 1 on insère {@code "..."}.
  * </ul>
  */
 class PaginationTest {

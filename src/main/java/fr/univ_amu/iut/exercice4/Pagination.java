@@ -1,5 +1,8 @@
 package fr.univ_amu.iut.exercice4;
 
+import java.util.Collection;
+import java.util.List;
+
 /// Kata 4 - Pagination.
 ///
 /// Kata algorithmique avec beaucoup de cas limites. Idéal pour pratiquer la
@@ -15,11 +18,18 @@ public class Pagination {
     this.total = total;
   }
 
-  private pagesAAfficher() {
-    if (total <= 7) {}
+  private List pagesAAfficher() {
+    String retour = new String();
+    if (total <= 7) retour.append(1,2,3,4,5,6,7); // on affiche toutes les pages
+    else if (courant == 1)
+      return ("(1) 2 ... " + total);
+    else if
+    return ("strin");
   }
 
-  private formatPage(int y) {}
+  private formatPage(int y) {
+    if (y == courant) return ("(" + y + ")");
+  }
 
   private separateurEntre(int x, int x1) {}
 
@@ -33,14 +43,18 @@ public class Pagination {
     // du README. Activez les tests dans l'ordre, ils vous guident :
     // - d'abord le cas "total <= 7" (affichage complet)
     // - puis le cas "beaucoup de pages" avec gestion des ellipses
-    if (total <= 7) {
+    if (pagesAAfficher()) {
       for (int i = 1; i <= total; i++) {
-        if (i != 1) sortie.append(" ");
-        if (i == courant) sortie.append("(" + courant + ")");
-        else sortie.append(i);
+        if (i != 1)
+          sortie.append(" ");
+        if (i == courant)
+          sortie.append("(" + courant + ")");
+        else
+          sortie.append(i);
       }
     } else {
-      if (total == 1) {}
+      if (total == 1) {
+      }
     }
     return sortie.toString();
   }
