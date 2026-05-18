@@ -33,7 +33,7 @@ public class Pagination {
   }
 
   private String separateurEntre(int x, int x1) {
-    if (x - x1 == 1) return " ";
+    if (x1 - x == 1) return " ";
     else return " ... ";
   }
 
@@ -59,7 +59,6 @@ public class Pagination {
           tmp = i;
         }
       }
-      ;
     }
     return sortie.toString();
   }
