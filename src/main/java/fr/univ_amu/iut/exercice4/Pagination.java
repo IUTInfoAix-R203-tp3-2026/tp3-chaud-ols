@@ -19,20 +19,27 @@ public class Pagination {
     this.total = total;
   }
 
-  private List pagesAAfficher() {
-    List<Integer> maListe = new ArrayList<>();
-    if (total <= 7) retour.append(1,2,3,4,5,6,7); // on affiche toutes les pages
+  private List<Integer> pagesAAfficher() {
+    List<Integer> retour = new ArrayList<>();
+    if (total <= 7) retour.addAll(List.of(1,2,3,4,5,6,7)); // on affiche toutes les pages
     else if (courant == 1)
-      return ("(1) 2 ... " + total);
-    else if
-    return ("strin");
+      retour.addAll(List.of(1, courant +1, total));
+    else if (courant == total)
+      retour.addAll(List.of(1, courant - 1, total));
+    else retour.addAll(List.of(1, courant-1, courant, courant +1, total))
+    return retour;
   }
 
-  private formatPage(int y) {
-    if (y == courant) return ("(" + y + ")");
+  private String formatPage(int page) {
+    if (page == courant)
+      return ("(" + page + ")");
+    else
+      return ("" + page);
   }
 
-  private separateurEntre(int x, int x1) {}
+  private separateurEntre(int x, int x1) {
+    if (x-x1 == 1) return " ";
+  }
 
   /// Retourne la représentation textuelle de la barre de pagination.
   ///
