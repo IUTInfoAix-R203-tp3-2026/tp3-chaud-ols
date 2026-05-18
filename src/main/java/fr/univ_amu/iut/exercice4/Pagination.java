@@ -25,7 +25,11 @@ public class Pagination {
     // du README. Activez les tests dans l'ordre, ils vous guident :
     // - d'abord le cas "total <= 7" (affichage complet)
     // - puis le cas "beaucoup de pages" avec gestion des ellipses
-
+    for (int i = 1; i <= total; i++) {
+      if (i != 1) sortie.append(" ");
+      if (i == courant) sortie.append("(" + courant + ")");
+      else sortie.append(i);
+    }
     return sortie.toString();
   }
 }
