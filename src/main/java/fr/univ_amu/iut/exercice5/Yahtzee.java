@@ -50,6 +50,7 @@ public class Yahtzee {
     int score = 0;
     // TODO kata 5 : compter les occurrences de chaque face (1..6) puis
     // renvoyer 2 * la plus haute face qui apparaît au moins 2 fois.
+
     int compteur = 0;
     for (int face = 0; face <= 6; face++) {
       nombres(face, new int[]={d1,d2,d3,d4,d5});
