@@ -24,7 +24,6 @@ import org.junit.jupiter.api.Test;
  */
 class PaginationTest {
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_pagination_d_une_seule_page_n_affiche_qu_elle_meme() {
     assertThat(new Pagination(1, 1).afficher()).isEqualTo("(1)");
