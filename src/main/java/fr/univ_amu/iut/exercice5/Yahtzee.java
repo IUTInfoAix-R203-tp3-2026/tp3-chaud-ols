@@ -13,8 +13,7 @@ package fr.univ_amu.iut.exercice5;
 /// TP4 (Refactoring).
 public class Yahtzee {
 
-  private Yahtzee() {
-  }
+  private Yahtzee() {}
 
   /// Somme des 5 dés (quelle que soit leur valeur).
   public static int chance(int d1, int d2, int d3, int d4, int d5) {
@@ -28,8 +27,7 @@ public class Yahtzee {
   public static int yahtzee(int d1, int d2, int d3, int d4, int d5) {
     int score = 0;
     // TODO kata 5 : 50 si d1 == d2 == d3 == d4 == d5, 0 sinon.
-    if (d1 == d2 && d2 == d3 && d3 == d4 && d4 == d5)
-      score = 50;
+    if (d1 == d2 && d2 == d3 && d3 == d4 && d4 == d5) score = 50;
     return score;
   }
 
@@ -39,8 +37,7 @@ public class Yahtzee {
     int total = 0;
     // TODO kata 5 : additionner les dés qui valent 'face'.
     for (int d : des) {
-      if (d == face)
-        total += d;
+      if (d == face) total += d;
     }
     return total;
   }
@@ -50,10 +47,17 @@ public class Yahtzee {
     int score = 0;
     // TODO kata 5 : compter les occurrences de chaque face (1..6) puis
     // renvoyer 2 * la plus haute face qui apparaît au moins 2 fois.
-
-    int compteur = 0;
-    for (int face = 0; face <= 6; face++) {
-      nombres(face, new int[]={d1,d2,d3,d4,d5});
+    int[] des = {d1, d2, d3, d4, d5};
+    int tmp = 0;
+    for (int i = 0; i <= 6; i++) {
+      int compteur = 0;
+      for (int g : des) {
+        if (g == i) {
+          compteur++;
+          tmp = g;
+        }
+      }
+      if (compteur >= 2 && score < (2 * tmp)) score = 2 * tmp;
     }
     return score;
   }
@@ -62,6 +66,19 @@ public class Yahtzee {
   public static int deuxPaires(int d1, int d2, int d3, int d4, int d5) {
     int score = 0;
     // TODO kata 5 : trouver deux faces distinctes qui apparaissent >= 2 fois.
+    int[] des = {d1, d2, d3, d4, d5};
+    int tmp = 0;
+
+    for (int i = 0; i <= 6; i++) {
+      int compteur = 0;
+      for (int g : des) {
+        if (g == i) {
+          compteur++;
+          tmp = g;
+        }
+      }
+      if (compteur >= 2) score = score + 2 * tmp;
+    }
     return score;
   }
 
