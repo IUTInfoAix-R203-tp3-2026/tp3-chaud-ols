@@ -68,7 +68,7 @@ public class Yahtzee {
     // TODO kata 5 : trouver deux faces distinctes qui apparaissent >= 2 fois.
     int[] des = {d1, d2, d3, d4, d5};
     int tmp = 0;
-
+    int nbPaire = 0;
     for (int i = 0; i <= 6; i++) {
       int compteur = 0;
       for (int g : des) {
@@ -77,7 +77,13 @@ public class Yahtzee {
           tmp = g;
         }
       }
-      if (compteur >= 2) score = score + 2 * tmp;
+      if (compteur >= 2) {
+        score = score + 2 * tmp;
+        nbPaire = nbPaire + 1;
+      }
+    }
+    if (nbPaire < 2) {
+      score = 0;
     }
     return score;
   }
@@ -87,6 +93,20 @@ public class Yahtzee {
     int score = 0;
     // TODO kata 5 : trouver la face qui apparaît au moins 3 fois, renvoyer 3 *
     // face.
+    int[] des = {d1, d2, d3, d4, d5};
+    int tmp = 0;
+    for (int i = 0; i <= 6; i++) {
+      int compteur = 0;
+      for (int g : des) {
+        if (g == i) {
+          compteur++;
+          tmp = g;
+        }
+      }
+      if (compteur >= 3) {
+        score = score + 3 * tmp;
+      }
+    }
     return score;
   }
 
