@@ -141,19 +141,16 @@ class YahtzeeTest {
     assertThat(Yahtzee.petiteSuite(1, 2, 3, 4, 5)).isEqualTo(15);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_petite_suite_dans_un_ordre_quelconque_vaut_15() {
     assertThat(Yahtzee.petiteSuite(3, 1, 5, 4, 2)).isEqualTo(15);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_petite_suite_avec_un_de_double_vaut_0() {
     assertThat(Yahtzee.petiteSuite(1, 2, 2, 4, 5)).isZero();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_petite_suite_de_2_a_6_vaut_0() {
     // C'est une grande suite, pas une petite
@@ -162,20 +159,17 @@ class YahtzeeTest {
 
   // ========= grandeSuite =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_grande_suite_2_a_6_vaut_20() {
     assertThat(Yahtzee.grandeSuite(2, 3, 4, 5, 6)).isEqualTo(20);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_grande_suite_de_1_a_5_vaut_0() {
     // C'est une petite suite, pas une grande
     assertThat(Yahtzee.grandeSuite(1, 2, 3, 4, 5)).isZero();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_grande_suite_avec_un_de_double_vaut_0() {
     assertThat(Yahtzee.grandeSuite(2, 3, 3, 5, 6)).isZero();
@@ -183,7 +177,6 @@ class YahtzeeTest {
 
   // ========= full =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_full_avec_brelan_de_2_et_paire_de_6_donne_la_somme_des_5_des() {
     assertThat(Yahtzee.full(2, 2, 2, 6, 6)).isEqualTo(18);

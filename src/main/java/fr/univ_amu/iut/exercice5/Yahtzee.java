@@ -49,12 +49,12 @@ public class Yahtzee {
     // renvoyer 2 * la plus haute face qui apparaît au moins 2 fois.
     int[] des = {d1, d2, d3, d4, d5};
     int tmp = 0;
-    for (int i = 0; i <= 6; i++) {
+    for (int i = 1; i <= 6; i++) {
       int compteur = 0;
-      for (int g : des) {
-        if (g == i) {
+      for (int d : des) {
+        if (d == i) {
           compteur++;
-          tmp = g;
+          tmp = d;
         }
       }
       if (compteur >= 2 && score < (2 * tmp)) score = 2 * tmp;
@@ -69,12 +69,12 @@ public class Yahtzee {
     int[] des = {d1, d2, d3, d4, d5};
     int tmp = 0;
     int nbPaire = 0;
-    for (int i = 0; i <= 6; i++) {
+    for (int i = 1; i <= 6; i++) {
       int compteur = 0;
-      for (int g : des) {
-        if (g == i) {
+      for (int d : des) {
+        if (d == i) {
           compteur++;
-          tmp = g;
+          tmp = d;
         }
       }
       if (compteur >= 2) {
@@ -95,12 +95,12 @@ public class Yahtzee {
     // face.
     int[] des = {d1, d2, d3, d4, d5};
     int tmp = 0;
-    for (int i = 0; i <= 6; i++) {
+    for (int i = 1; i <= 6; i++) {
       int compteur = 0;
-      for (int g : des) {
-        if (g == i) {
+      for (int d : des) {
+        if (d == i) {
           compteur++;
-          tmp = g;
+          tmp = d;
         }
       }
       if (compteur >= 3) {
@@ -114,12 +114,36 @@ public class Yahtzee {
   public static int petiteSuite(int d1, int d2, int d3, int d4, int d5) {
     int score = 0;
     // TODO kata 5 : vérifier que chaque face de 1 à 5 apparaît exactement une fois.
+    int[] des = {d1, d2, d3, d4, d5};
+    int compteur = 0;
+    for (int i = 1; i <= 5; i++) {
+      for (int d : des) {
+        if (d == i) {
+          compteur++;
+          score = score + d;
+          break;
+        }
+      }
+    }
+    if (compteur != 5) score = 0;
     return score;
   }
 
   /// 20 si les 5 dés sont exactement 2-3-4-5-6, 0 sinon.
   public static int grandeSuite(int d1, int d2, int d3, int d4, int d5) {
     int score = 0;
+    int[] des = {d1, d2, d3, d4, d5};
+    int compteur = 0;
+    for (int i = 2; i <= 6; i++) {
+      for (int d : des) {
+        if (d == i) {
+          compteur++;
+          score = score + d;
+          break;
+        }
+      }
+    }
+    if (compteur != 5) score = 0;
     return score;
   }
 
