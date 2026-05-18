@@ -15,6 +15,14 @@ public class Pagination {
     this.total = total;
   }
 
+  private pagesAAfficher() {
+    if (total <= 7) {}
+  }
+
+  private formatPage(int y) {}
+
+  private separateurEntre(int x, int x1) {}
+
   /// Retourne la représentation textuelle de la barre de pagination.
   ///
   /// Format : pages séparées par des espaces, page courante entre parenthèses,
@@ -25,10 +33,14 @@ public class Pagination {
     // du README. Activez les tests dans l'ordre, ils vous guident :
     // - d'abord le cas "total <= 7" (affichage complet)
     // - puis le cas "beaucoup de pages" avec gestion des ellipses
-    for (int i = 1; i <= total; i++) {
-      if (i != 1) sortie.append(" ");
-      if (i == courant) sortie.append("(" + courant + ")");
-      else sortie.append(i);
+    if (total <= 7) {
+      for (int i = 1; i <= total; i++) {
+        if (i != 1) sortie.append(" ");
+        if (i == courant) sortie.append("(" + courant + ")");
+        else sortie.append(i);
+      }
+    } else {
+      if (total == 1) {}
     }
     return sortie.toString();
   }
