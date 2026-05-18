@@ -2,7 +2,6 @@ package fr.univ_amu.iut.exercice5;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -182,19 +181,16 @@ class YahtzeeTest {
     assertThat(Yahtzee.full(2, 2, 2, 6, 6)).isEqualTo(18);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_full_avec_brelan_de_5_et_paire_de_3_donne_la_somme_des_5_des() {
     assertThat(Yahtzee.full(5, 5, 5, 3, 3)).isEqualTo(21);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_full_sans_brelan_vaut_0() {
     assertThat(Yahtzee.full(2, 2, 3, 4, 5)).isZero();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_full_sans_paire_vaut_0() {
     assertThat(Yahtzee.full(3, 3, 3, 4, 5)).isZero();
