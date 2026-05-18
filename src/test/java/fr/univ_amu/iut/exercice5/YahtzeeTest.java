@@ -8,28 +8,29 @@ import org.junit.jupiter.api.Test;
 /**
  * Kata 5 - Yahtzee scoring.
  *
- * <p>Les tests sont organisés par catégorie (chance, yahtzee, nombres...) et par catégorie on a
- * typiquement 2 à 3 cas : un cas positif, un cas limite, parfois un cas négatif. Cette densité est
- * essentielle pour empêcher les solutions triviales (ex : pour {@code paire}, un simple {@code
+ * <p>
+ * Les tests sont organisés par catégorie (chance, yahtzee, nombres...) et par
+ * catégorie on a
+ * typiquement 2 à 3 cas : un cas positif, un cas limite, parfois un cas
+ * négatif. Cette densité est
+ * essentielle pour empêcher les solutions triviales (ex : pour {@code paire},
+ * un simple {@code
  * return 2*d1} passerait un seul test mais pas trois).
  */
 class YahtzeeTest {
 
   // ========= chance =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_chance_donne_la_somme_des_des() {
     assertThat(Yahtzee.chance(1, 1, 3, 3, 6)).isEqualTo(14);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_chance_avec_cinq_uns_vaut_5() {
     assertThat(Yahtzee.chance(1, 1, 1, 1, 1)).isEqualTo(5);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_chance_avec_cinq_six_vaut_30() {
     assertThat(Yahtzee.chance(6, 6, 6, 6, 6)).isEqualTo(30);
@@ -37,25 +38,21 @@ class YahtzeeTest {
 
   // ========= yahtzee =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_yahtzee_avec_cinq_quatre_vaut_50() {
     assertThat(Yahtzee.yahtzee(4, 4, 4, 4, 4)).isEqualTo(50);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_yahtzee_avec_cinq_uns_vaut_50() {
     assertThat(Yahtzee.yahtzee(1, 1, 1, 1, 1)).isEqualTo(50);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_yahtzee_avec_quatre_uns_et_un_deux_vaut_0() {
     assertThat(Yahtzee.yahtzee(1, 1, 1, 1, 2)).isZero();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_yahtzee_avec_cinq_des_tous_differents_vaut_0() {
     assertThat(Yahtzee.yahtzee(1, 2, 3, 4, 5)).isZero();
@@ -63,27 +60,23 @@ class YahtzeeTest {
 
   // ========= nombres =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_decompte_compte_trois_uns() {
-    assertThat(Yahtzee.nombres(1, new int[] {1, 2, 1, 4, 1})).isEqualTo(3);
+    assertThat(Yahtzee.nombres(1, new int[] { 1, 2, 1, 4, 1 })).isEqualTo(3);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_decompte_compte_deux_six() {
-    assertThat(Yahtzee.nombres(6, new int[] {1, 6, 3, 6, 2})).isEqualTo(12);
+    assertThat(Yahtzee.nombres(6, new int[] { 1, 6, 3, 6, 2 })).isEqualTo(12);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void le_decompte_retourne_zero_si_face_absente() {
-    assertThat(Yahtzee.nombres(6, new int[] {1, 2, 3, 4, 5})).isZero();
+    assertThat(Yahtzee.nombres(6, new int[] { 1, 2, 3, 4, 5 })).isZero();
   }
 
   // ========= paire =========
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   void la_paire_avec_deux_trois_vaut_6() {
     assertThat(Yahtzee.paire(3, 3, 1, 2, 4)).isEqualTo(6);
