@@ -1,5 +1,6 @@
 package fr.univ_amu.iut.exercice4;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class Pagination {
   }
 
   private List pagesAAfficher() {
-    String retour = new String();
+    List<Integer> maListe = new ArrayList<>();
     if (total <= 7) retour.append(1,2,3,4,5,6,7); // on affiche toutes les pages
     else if (courant == 1)
       return ("(1) 2 ... " + total);
