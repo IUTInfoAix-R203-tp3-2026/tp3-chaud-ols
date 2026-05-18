@@ -21,12 +21,14 @@ public class Pagination {
 
   private List<Integer> pagesAAfficher() {
     List<Integer> retour = new ArrayList<>();
-    if (total <= 7) retour.addAll(List.of(1,2,3,4,5,6,7)); // on affiche toutes les pages
+    if (total <= 7)
+      retour.addAll(List.of(1, 2, 3, 4, 5, 6, 7)); // on affiche toutes les pages
     else if (courant == 1)
-      retour.addAll(List.of(1, courant +1, total));
+      retour.addAll(List.of(1, courant + 1, total));
     else if (courant == total)
       retour.addAll(List.of(1, courant - 1, total));
-    else retour.addAll(List.of(1, courant-1, courant, courant +1, total))
+    else
+      retour.addAll(List.of(1, courant - 1, courant, courant + 1, total));
     return retour;
   }
 
@@ -37,8 +39,11 @@ public class Pagination {
       return ("" + page);
   }
 
-  private separateurEntre(int x, int x1) {
-    if (x-x1 == 1) return " ";
+  private String separateurEntre(int x, int x1) {
+    if (x - x1 == 1)
+      return " ";
+    else
+      return " ... ";
   }
 
   /// Retourne la représentation textuelle de la barre de pagination.
@@ -51,7 +56,11 @@ public class Pagination {
     // du README. Activez les tests dans l'ordre, ils vous guident :
     // - d'abord le cas "total <= 7" (affichage complet)
     // - puis le cas "beaucoup de pages" avec gestion des ellipses
-    if (pagesAAfficher()) {
+    for(int i = 0; i < pagesAAfficher().size();i++){
+      
+    }
+
+    if () {
       for (int i = 1; i <= total; i++) {
         if (i != 1)
           sortie.append(" ");
